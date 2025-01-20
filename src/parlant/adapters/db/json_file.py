@@ -169,6 +169,8 @@ class JSONFileDocumentDatabase(DocumentDatabase):
     ) -> None:
         if name in self._collections:
             del self._collections[name]
+            return
+
         raise ValueError(f'Collection "{name}" does not exists')
 
     async def _flush_unlocked(self) -> None:

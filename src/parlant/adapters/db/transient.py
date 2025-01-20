@@ -82,6 +82,8 @@ class TransientDocumentDatabase(DocumentDatabase):
     ) -> None:
         if name in self._collections:
             del self._collections[name]
+            return
+
         else:
             raise ValueError(f'Collection "{name}" does not exist')
 

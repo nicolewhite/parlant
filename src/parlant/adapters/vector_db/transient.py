@@ -128,6 +128,7 @@ class TransientVectorDatabase(VectorDatabase):
     ) -> None:
         if name not in self._collections:
             raise ValueError(f'Collection "{name}" not found.')
+
         self._database.delete_tenant(self._collection_name_to_tenant_id[name])
         del self._collections[name]
 

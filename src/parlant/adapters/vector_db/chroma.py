@@ -163,6 +163,7 @@ class ChromaDatabase(VectorDatabase):
     ) -> None:
         if name not in self._collections:
             raise ValueError(f'Collection "{name}" not found.')
+
         self._chroma_client.delete_collection(name=name)
         del self._collections[name]
 
